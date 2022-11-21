@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
+/*
+Row-horizontal-main-
+cross-vertical
 
+
+column-vertical-main
+cros-horizontal
+ */
 void main() {
   runApp(MaterialApp(
       home:Scaffold(
           appBar: AppBar(),
-          body:Row(
-            children: [
-              Expanded(child: Container(color: Colors.amber,)),
-              Expanded(flex:3,child: Container(color: Colors.green,child: Column(
-                children: [
-                  Expanded(child: Container(color: Colors.black,)),
-                  Expanded(child: Container(color: Colors.white,)),
-                ],
-              ),)),
-              // Expanded(child: Container(color: Colors.black,))
-            ],
+          body:Container(
+            width: 200,
+            height: 400,
+            color: Colors.green,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(height: 70,width: 100,color: Colors.black,),
+                Container(height: 70,width: 100,color: Colors.yellow,),
+                Container(height: 70,width: 100,color: Colors.pink,),
+              ],
+            ),
           )
       )
   ));
