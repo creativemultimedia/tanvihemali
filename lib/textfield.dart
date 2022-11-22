@@ -24,8 +24,53 @@ class _testState extends State<test> {
         appBar: AppBar(),
         body:Column(
           children: [
-            TextField(controller: t1,),
-            TextField(controller: t2,),
+            TextField(controller: t1,
+            keyboardType: TextInputType.number),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: TextField(controller: t2,
+                // maxLines: 5,
+                // minLines: 2,
+              decoration: InputDecoration(
+                fillColor: Colors.grey,
+                filled: true,
+                labelText: "Label Text",
+                hintText: "Hint text",
+                counterText: "counter",
+                helperText: "Helper",
+                // errorText: "null",
+                // prefixText: "prefix",
+                suffixText: "suffix",
+                prefix: Text("P"),
+                enabled: false,
+                prefixIcon: Icon(Icons.add),
+                  //error with focus
+                  focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.orange),
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                //error
+                  errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink,),
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                //click kre pchi
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.yellow),
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                  //default
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                disabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.cyanAccent),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+              ),
+              keyboardType: TextInputType.multiline,),
+            ),
             ElevatedButton(onPressed: () {
               String a=t1.text;
               String b=t2.text;
@@ -43,6 +88,7 @@ class _testState extends State<test> {
     );
   }
 }
+
 
 
 /*
